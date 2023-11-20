@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://burt5spkb3j1x"]
+
+[ext_resource type="Script" path="res://writer/writer.gd" id="1_ka65i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kqhmg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v18x7"]
+
+[node name="Writer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="." node_paths=PackedStringArray("the_thing")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kqhmg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v18x7")
+script = ExtResource("1_ka65i")
+the_thing = NodePath("../RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[connection signal="text_changed" from="TextEdit" to="TextEdit" method="_on_text_changed"]
