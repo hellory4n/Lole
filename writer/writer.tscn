@@ -22,7 +22,7 @@ tab_alignment = 1
 [node name="Writer" type="TextEdit" parent="TabContainer" node_paths=PackedStringArray("the_thing")]
 layout_mode = 2
 script = ExtResource("1_stost")
-the_thing = NodePath("")
+the_thing = NodePath("../Preview")
 
 [node name="Preview" type="Control" parent="TabContainer"]
 visible = false
