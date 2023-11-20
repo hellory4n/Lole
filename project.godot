@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Lole"
-run/main_scene="res://writer/writer.tscn"
+run/main_scene="res://lole_idk/lole.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="lole"
 config/features=PackedStringArray("4.2", "Mobile")
