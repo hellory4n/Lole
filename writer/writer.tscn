@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://burt5spkb3j1x"]
+[gd_scene load_steps=7 format=3 uid="uid://burt5spkb3j1x"]
 
+[ext_resource type="Theme" uid="uid://c0bcvkyvqeere" path="res://theme/Theme.tres" id="1_fuumn"]
 [ext_resource type="Script" path="res://writer/writer.gd" id="1_stost"]
 [ext_resource type="Script" path="res://writer/add_formatting.gd" id="2_p2ymx"]
+[ext_resource type="Script" path="res://writer/why.gd" id="3_f0kih"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwgqm"]
-bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bqj0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Shortcut" id="Shortcut_2htw1"]
 
@@ -15,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_fuumn")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
@@ -39,76 +42,85 @@ script = ExtResource("1_stost")
 the_thing = NodePath("../../Preview")
 
 [node name="Panel" type="Panel" parent="TabContainer/Writer"]
-custom_minimum_size = Vector2(0, 31)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 31.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kwgqm")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2bqj0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Writer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 40.0
 grow_horizontal = 2
 alignment = 1
+script = ExtResource("3_f0kih")
 
 [node name="Button" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 shortcut = SubResource("Shortcut_2htw1")
 text = "Bold"
-flat = true
 script = ExtResource("2_p2ymx")
 idiocity = NodePath("../../Gkggg")
 
 [node name="Button2" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 shortcut = SubResource("Shortcut_2htw1")
 text = "Italic"
-flat = true
 script = ExtResource("2_p2ymx")
 mode = 1
 idiocity = NodePath("../../Gkggg")
 
 [node name="Button3" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 shortcut = SubResource("Shortcut_2htw1")
 text = "Strikethrough"
-flat = true
 script = ExtResource("2_p2ymx")
 mode = 8
 idiocity = NodePath("../../Gkggg")
 
 [node name="Button4" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 shortcut = SubResource("Shortcut_2htw1")
 text = "Underline"
-flat = true
 script = ExtResource("2_p2ymx")
 mode = 9
 idiocity = NodePath("../../Gkggg")
 
 [node name="Button5" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 shortcut = SubResource("Shortcut_2htw1")
 text = "Code"
-flat = true
 script = ExtResource("2_p2ymx")
 mode = 7
 idiocity = NodePath("../../Gkggg")
 
 [node name="Button6" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 shortcut = SubResource("Shortcut_2htw1")
 text = "Hint"
-flat = true
 script = ExtResource("2_p2ymx")
 mode = 4
 idiocity = NodePath("../../Gkggg")
@@ -117,19 +129,21 @@ idiocity = NodePath("../../Gkggg")
 layout_mode = 2
 
 [node name="Button7" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 text = "Table"
-flat = true
 script = ExtResource("2_p2ymx")
 mode = 2
 idiocity = NodePath("../../Gkggg")
 
 [node name="Button8" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 text = "Cell"
-flat = true
 script = ExtResource("2_p2ymx")
 mode = 3
 idiocity = NodePath("../../Gkggg")
@@ -138,19 +152,21 @@ idiocity = NodePath("../../Gkggg")
 layout_mode = 2
 
 [node name="Button9" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 text = "Unordered List"
-flat = true
 script = ExtResource("2_p2ymx")
 mode = 5
 idiocity = NodePath("../../Gkggg")
 
 [node name="Button10" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
 text = "Ordered List"
-flat = true
 script = ExtResource("2_p2ymx")
 mode = 6
 idiocity = NodePath("../../Gkggg")
