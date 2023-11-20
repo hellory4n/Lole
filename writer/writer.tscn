@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://burt5spkb3j1x"]
+
+[ext_resource type="Script" path="res://writer/writer.gd" id="1_stost"]
+
+[node name="Writer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="Writer" type="TextEdit" parent="TabContainer" node_paths=PackedStringArray("the_thing")]
+layout_mode = 2
+script = ExtResource("1_stost")
+the_thing = NodePath("")
+
+[node name="Preview" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[connection signal="tab_changed" from="TabContainer" to="TabContainer/Writer" method="_on_tab_container_tab_changed"]

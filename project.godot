@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Lole"
-run/main_scene="res://writer/Writer.tscn"
+run/main_scene="res://writer/writer.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="lole"
 config/features=PackedStringArray("4.2", "Mobile")
@@ -23,7 +23,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=768
-window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 
