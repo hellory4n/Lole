@@ -1,6 +1,10 @@
 extends TextEdit
+class_name Writer
 
 @export var the_thing: Control
+
+func _ready():
+	set_anchor_and_offset(SIDE_TOP, 0, 31)
 
 func _on_tab_container_tab_changed(tab: int):
 	if tab == 1:
