@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://burt5spkb3j1x"]
+[gd_scene load_steps=12 format=3 uid="uid://burt5spkb3j1x"]
 
 [ext_resource type="Theme" uid="uid://c0bcvkyvqeere" path="res://theme/Theme.tres" id="1_fuumn"]
 [ext_resource type="Script" path="res://writer/writer.gd" id="1_stost"]
@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://b82t6vwpkpyyc" path="res://theme/Fonts/RedHatText-Bold.ttf" id="4_av60d"]
 [ext_resource type="FontFile" uid="uid://f40bmkfv0npj" path="res://theme/Fonts/RedHatText-MediumItalic.ttf" id="6_w5hbc"]
 [ext_resource type="FontFile" uid="uid://c5uj34xs54thp" path="res://theme/Fonts/JetBrainsMono-Regular.ttf" id="7_vwxoo"]
+[ext_resource type="FontFile" uid="uid://3bdi3nljrpe3" path="res://theme/Fonts/RedHatText-BoldItalic.ttf" id="8_thhaa"]
+[ext_resource type="FontFile" uid="uid://d0oikrd0m3r15" path="res://theme/Fonts/RedHatText-SemiBold.ttf" id="9_gbk64"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bqj0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -34,13 +36,15 @@ tab_alignment = 1
 [node name="Writer" type="Control" parent="TabContainer"]
 layout_mode = 2
 
-[node name="Gkggg" type="TextEdit" parent="TabContainer/Writer" node_paths=PackedStringArray("the_thing")]
+[node name="Gkggg" type="CodeEdit" parent="TabContainer/Writer" node_paths=PackedStringArray("the_thing")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+wrap_mode = 1
+gutters_draw_line_numbers = true
 script = ExtResource("1_stost")
 the_thing = NodePath("../../Preview")
 
@@ -73,6 +77,7 @@ theme_override_fonts/font = ExtResource("4_av60d")
 shortcut = SubResource("Shortcut_2htw1")
 text = "B"
 script = ExtResource("2_p2ymx")
+mode = null
 idiocity = NodePath("../../Gkggg")
 
 [node name="Button2" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
@@ -167,12 +172,39 @@ idiocity = NodePath("../../Gkggg")
 [node name="Button10" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-tooltip_text = "Unordered List"
+tooltip_text = "Ordered List"
 shortcut_context = NodePath("../..")
 theme_type_variation = &"SecondaryButton"
 text = "1."
 script = ExtResource("2_p2ymx")
 mode = 6
+idiocity = NodePath("../../Gkggg")
+
+[node name="VSeparator3" type="VSeparator" parent="TabContainer/Writer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button11" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+tooltip_text = "Title"
+shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
+theme_override_fonts/font = ExtResource("8_thhaa")
+text = "T"
+script = ExtResource("2_p2ymx")
+mode = 10
+idiocity = NodePath("../../Gkggg")
+
+[node name="Button12" type="Button" parent="TabContainer/Writer/HBoxContainer" node_paths=PackedStringArray("shortcut_context", "idiocity")]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+tooltip_text = "Subtitle"
+shortcut_context = NodePath("../..")
+theme_type_variation = &"SecondaryButton"
+theme_override_fonts/font = ExtResource("9_gbk64")
+text = "t"
+script = ExtResource("2_p2ymx")
+mode = 11
 idiocity = NodePath("../../Gkggg")
 
 [node name="Preview" type="Control" parent="TabContainer"]

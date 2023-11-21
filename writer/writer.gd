@@ -1,4 +1,4 @@
-extends TextEdit
+extends CodeEdit
 class_name Writer
 
 @export var the_thing: Control

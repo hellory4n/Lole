@@ -10,7 +10,9 @@ enum Fucker {
 	OrderedList,
 	Code,
 	Strikethrough,
-	Underline
+	Underline,
+	Title,
+	Subtitle
 }
 
 @export var mode: Fucker = Fucker.Bold
@@ -38,3 +40,7 @@ func _pressed():
 		idiocity.insert_text_at_caret("[s][/s]")
 	if mode == Fucker.Underline:
 		idiocity.insert_text_at_caret("[u][/u]")
+	if mode == Fucker.Title:
+		idiocity.insert_text_at_caret("\n[font_size=24][b][/b][/font_size]\n\n")
+	if mode == Fucker.Subtitle:
+		idiocity.insert_text_at_caret("\n[font_size=18][b][/b][/font_size]\n\n")
