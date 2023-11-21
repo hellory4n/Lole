@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp0e12peffhb5"]
+[gd_scene load_steps=5 format=3 uid="uid://dp0e12peffhb5"]
 
 [ext_resource type="Theme" uid="uid://c0bcvkyvqeere" path="res://theme/Theme.tres" id="1_0geqg"]
+[ext_resource type="Script" path="res://lole_idk/document_tree.gd" id="2_u75sb"]
 [ext_resource type="PackedScene" uid="uid://burt5spkb3j1x" path="res://writer/writer.tscn" id="2_wn48o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlmpm"]
@@ -36,24 +37,6 @@ grow_vertical = 2
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="SidebarThingy/fjnjg"]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-offset_left = 8.0
-offset_right = 1280.0
-offset_bottom = 768.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SidebarThingy/fjnjg/ScrollContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="SidebarThingy/fjnjg/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(150, 40)
-layout_mode = 2
-theme_type_variation = &"SidebarButton"
-text = "Document"
-alignment = 0
-text_overrun_behavior = 3
-
 [node name="VSeparator" type="VSeparator" parent="SidebarThingy/fjnjg"]
 layout_mode = 1
 anchors_preset = 11
@@ -64,8 +47,33 @@ offset_left = -2.0
 grow_horizontal = 0
 grow_vertical = 2
 
+[node name="Tree" type="Tree" parent="SidebarThingy/fjnjg" node_paths=PackedStringArray("root_writer", "content_root")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_u75sb")
+root_writer = NodePath("../../contnet/Writer")
+content_root = NodePath("../../contnet")
+writer = ExtResource("2_wn48o")
+
+[node name="Button" type="Button" parent="SidebarThingy/fjnjg"]
+custom_minimum_size = Vector2(130, 40)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 140.0
+offset_bottom = 50.0
+theme_type_variation = &"SecondaryButton"
+text = "Add"
+
 [node name="contnet" type="Control" parent="SidebarThingy"]
 layout_mode = 2
 
 [node name="Writer" parent="SidebarThingy/contnet" instance=ExtResource("2_wn48o")]
 layout_mode = 1
+
+[connection signal="item_selected" from="SidebarThingy/fjnjg/Tree" to="SidebarThingy/fjnjg/Tree" method="select_item"]
+[connection signal="pressed" from="SidebarThingy/fjnjg/Button" to="SidebarThingy/fjnjg/Tree" method="add_items_omgomgomgomg"]
