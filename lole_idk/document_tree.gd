@@ -2,7 +2,6 @@ extends Tree
 
 # key is TreeItem, value is the writer ui
 var items = {}
-@export var root_writer: Control
 @export var content_root: Control
 @export var writer: PackedScene
 var current_page: TreeItem
@@ -18,6 +17,7 @@ func add_items_omgomgomgomg():
 	epic_new_item.set_text(0, "New Document")
 	epic_new_item.set_editable(0, true)
 	var m = writer.instantiate()
+	m.visible = false
 	items.merge({epic_new_item: m})
 	content_root.add_child(m)
 

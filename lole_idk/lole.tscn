@@ -47,7 +47,7 @@ offset_left = -2.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Tree" type="Tree" parent="SidebarThingy/fjnjg" node_paths=PackedStringArray("root_writer", "content_root")]
+[node name="Tree" type="Tree" parent="SidebarThingy/fjnjg" node_paths=PackedStringArray("content_root")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +55,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_u75sb")
-root_writer = NodePath("../../contnet/Writer")
 content_root = NodePath("../../contnet")
 writer = ExtResource("2_wn48o")
 
@@ -71,9 +70,6 @@ text = "Add"
 
 [node name="contnet" type="Control" parent="SidebarThingy"]
 layout_mode = 2
-
-[node name="Writer" parent="SidebarThingy/contnet" instance=ExtResource("2_wn48o")]
-layout_mode = 1
 
 [connection signal="item_selected" from="SidebarThingy/fjnjg/Tree" to="SidebarThingy/fjnjg/Tree" method="select_item"]
 [connection signal="pressed" from="SidebarThingy/fjnjg/Button" to="SidebarThingy/fjnjg/Tree" method="add_items_omgomgomgomg"]
