@@ -26,7 +26,7 @@ func select_item():
 	current_page = get_selected()
 	items[current_page].visible = true
 	
-func process_page(page: Page, tree_item_parent: TreeItem = null):
+func process_page(page: Dictionary, tree_item_parent: TreeItem = null):
 	var yes = create_item(tree_item_parent)
 	yes.set_text(0, page.name)
 	yes.set_editable(0, true)
