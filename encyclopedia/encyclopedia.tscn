@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dp0e12peffhb5"]
 
-[ext_resource type="Theme" uid="uid://c0bcvkyvqeere" path="res://theme/Theme.tres" id="1_0geqg"]
-[ext_resource type="Script" path="res://lole_idk/document_tree.gd" id="2_u75sb"]
-[ext_resource type="PackedScene" uid="uid://burt5spkb3j1x" path="res://writer/writer.tscn" id="2_wn48o"]
+[ext_resource type="Theme" uid="uid://c0bcvkyvqeere" path="res://theme/Theme.tres" id="1_hcygv"]
+[ext_resource type="Script" path="res://encyclopedia/document_tree.gd" id="2_ki6kt"]
+[ext_resource type="PackedScene" uid="uid://burt5spkb3j1x" path="res://writer/writer.tscn" id="3_p67uv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlmpm"]
 bg_color = Color(0.027451, 0.054902, 0.0980392, 1)
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_0geqg")
+theme = ExtResource("1_hcygv")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -54,9 +54,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_u75sb")
+script = ExtResource("2_ki6kt")
 content_root = NodePath("../../contnet")
-writer = ExtResource("2_wn48o")
+writer = ExtResource("3_p67uv")
 
 [node name="Button" type="Button" parent="SidebarThingy/fjnjg"]
 custom_minimum_size = Vector2(130, 40)
