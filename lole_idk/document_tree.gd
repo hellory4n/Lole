@@ -30,6 +30,7 @@ func process_page(page: Page, tree_item_parent: TreeItem = null):
 	var yes = create_item(tree_item_parent)
 	yes.set_text(0, page.name)
 	yes.set_editable(0, true)
+	yes.custom_minimum_height = 40
 	
 	var m = writer.instantiate()
 	m.get_node("TabContainer/Writer/Gkggg").text = page.content
