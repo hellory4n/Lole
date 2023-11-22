@@ -1,7 +1,8 @@
 extends Tree
+class_name EncyclopediaTree
 
 # key is TreeItem, value is the writer ui
-var items = {}
+@export var items = {}
 @export var content_root: Control
 @export var writer: PackedScene
 var current_page: TreeItem

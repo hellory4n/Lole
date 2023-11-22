@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://caw6esagfqcue"]
+[gd_scene load_steps=7 format=3 uid="uid://caw6esagfqcue"]
 
 [ext_resource type="Theme" uid="uid://c0bcvkyvqeere" path="res://theme/Theme.tres" id="1_15ovo"]
 [ext_resource type="PackedScene" uid="uid://dp0e12peffhb5" path="res://encyclopedia/encyclopedia.tscn" id="2_qgt1i"]
+[ext_resource type="Script" path="res://idk_man/save.gd" id="3_jwdev"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxo2u"]
 bg_color = Color(0.0117647, 0.027451, 0.0470588, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_3uedc"]
+device = -1
+ctrl_pressed = true
+keycode = 83
+unicode = 115
+
+[sub_resource type="Shortcut" id="Shortcut_oy5va"]
+events = [SubResource("InputEventKey_3uedc")]
 
 [node name="LoleIdk" type="Control"]
 layout_mode = 3
@@ -42,4 +52,8 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 15.75
 theme_type_variation = &"PanelButton"
+shortcut = SubResource("Shortcut_oy5va")
 text = "Save"
+script = ExtResource("3_jwdev")
+encyclopedia = Object(Control,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":2,"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"auto_translate":true,"localize_numeral_system":true,"tooltip_text":"","focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":0,"mouse_filter":0,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":0,"shortcut_context":null,"theme":ExtResource("1_15ovo"),"theme_type_variation":&"","script":null)
+

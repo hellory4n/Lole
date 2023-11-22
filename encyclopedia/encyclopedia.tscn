@@ -7,7 +7,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlmpm"]
 bg_color = Color(0.027451, 0.054902, 0.0980392, 1)
 
-[node name="lole" type="Control"]
+[node name="encyclopedia" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
